@@ -15,6 +15,9 @@ add_executable(${PRJ_NAME} main.cpp)
 set(CMAKE_CXX_FLAGS_DEBUG "-g -O0")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3 -DNDEBUG")
 
+# Set the output directory for binaries
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../bin)
+
 # Custom target to generate debug script
 add_custom_target(generate_debug_script
     COMMAND ${CMAKE_COMMAND} -E echo "set(CMAKE_BUILD_TYPE Debug)" > ${CMAKE_BINARY_DIR}/debug.cmake
